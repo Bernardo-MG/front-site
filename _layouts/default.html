@@ -4,6 +4,11 @@
 <body>
    {%- include header.html -%}
    <main role="main" class="container">
+      {%- if page.title -%}
+      <header class="pb-2 mt-4 mb-2 border-bottom">
+         <h1>{{ page.title }}</h1>
+      </header>
+      {%- endif -%}
       <section id="main-section" class="container">
          {{ content }}
       </section>
