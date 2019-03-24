@@ -1,97 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   
-   <!-- IE Compatibility tag -->
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   
-   <title>{{ page.title }}</title>
-   <!-- <link href="./static/favicon.ico" rel="shortcut icon" type="image/x-icon"/> -->
-   
-   <!-- Metadata -->
-   <meta name="description" content="{{ page.description }}">
-   <meta name="keywords" content="{{ site.keywords }}">
-   <meta name="author" content="{{ site.author }}">
-   
-   <meta name="generator" content="Jekyll v{{jekyll.version}}" />
-   
-   <!-- Linking Metadata -->
-   <link rel="canonical" href="{{ site.url }}">
-   
-   <!-- Facebook OpenGraph -->
-   <meta property="og:type" content="website" />
-   <meta property="og:image" content="./assets/favicon.ico" />
-   <meta property="og:url" content="{{ site.url }}" />
-   <meta property="og:site_name" content="{{ site.title }}" />
-   <meta property="og:title" content="{{ site.title }}" />
-   <meta property="og:description" content="{{ site.description }}" />
-   
-   <!-- Twitter Card -->
-   <meta name="twitter:card" content="summary" />
-   <meta name="twitter:creator" content="{{ social.twitter }}" />
-   <meta name="twitter:title" content="{{ site.title }}" />
-   <meta name="twitter:description" content="{{ site.description }}" />
-   
-   <!-- CSS -->
-   <link rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lumen/bootstrap.min.css"
-      crossorigin="anonymous">
-   <link rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous">
-    <!-- Custom style -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-
-</head>
+{%- include head.html -%}
 <body>
-   <header class="header">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-         <a class="navbar-brand" href="#">{{ site.title }}</a>
-         <button class="navbar-toggler" type="button"
-            data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-               <li class="nav-item active"><a class="nav-link"
-                  href="#">Home <span class="sr-only">(current)</span></a>
-               </li>
-               <li class="nav-item"><a class="nav-link" href="#">Link</a>
-               </li>
-               <li class="nav-item"><a class="nav-link disabled"
-                  href="#">Disabled</a></li>
-            </ul>
-         </div>
-      </nav>
-   </header>
+   {%- include header.html -%}
    <main role="main" class="container">
       <section id="main-section" class="container">
          {{ content }}
       </section>
    </main>
-   <footer class="footer">
-      <div class="container">
-         <span class="text-muted">Place sticky footer content here.</span>
-      </div>
-   </footer>
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-   <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-   <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-   <script src="/assets/js/chevron-toggle.js"></script>
-   <script src="/assets/js/initialize.js"></script>
+   {%- include footer.html -%}
+   {%- include scripts.html -%}
 </body>
 </html>
