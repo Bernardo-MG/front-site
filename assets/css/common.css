@@ -1,0 +1,24 @@
+/*!
+ * Licensed under the MIT License (http://www.opensource.org/licenses/mit-license.php)
+ */
+/*!
+ * General-use styles, meant to be applied to all the pages on the site.
+ */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/**
+* Internal links.
+*
+* These are links pointing to the same page, and are shown this way: "[link]".
+*/
+.internal-link:before {
+    content: "[";
+}
+
+.internal-link:after {
+    content: "]";
+}
