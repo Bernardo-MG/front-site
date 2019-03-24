@@ -29,7 +29,7 @@ To actually test the site it should be published locally:
 $ bundle exec jekyll serve
 ```
 
-Now it can be checked at [http://localhost:4000](http://localhost:4000);
+Now it can be checked at [http://localhost:4000](http://localhost:4000). And it will rebuild the page after any change.
 
 ## Collaborate
 
