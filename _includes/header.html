@@ -9,13 +9,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link"
-               href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item"><a class="nav-link disabled"
-               href="#">Disabled</a></li>
+            {% assign current = page.url | downcase | split: '/' %}
+            {%- for node in site.pages -%}
+               {% assign nodeName = node.name | downcase | split: '.' %}
+               {% if current[1] == nodeName[0] %}
+                  {% assign activeClass = 'active' %}
+               {% else %}
+                  {% assign activeClass = '' %}
+               {% endif %}
+               <li class="nav-item {{ activeClass }}">
+                  <a class="nav-link" href="{{ node.url | relative_url }}">{{ node.title | escape }}
+                     {% if current[1] == nodeName[0] %}
+                     <span class="sr-only">(current)</span>
+                     {% endif %}
+                  </a>
+               </li>
+            {%- endfor -%}
          </ul>
       </div>
    </nav>
