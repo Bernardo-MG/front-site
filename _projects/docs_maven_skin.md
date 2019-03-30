@@ -1,6 +1,7 @@
 ---
 layout: project
 title:  "Docs Maven Skin"
+link: https://github.com/Bernardo-MG/docs-maven-skin
 ---
 A minimalist and responsive Bootstrap-based HTML5 skin for Maven Site, which will help to create documentation sites with Maven.
 
