@@ -5,7 +5,11 @@ permalink: /projects/
 ---
 
 {%- for project in site.projects -%}
-   <a class="post-link" href="{{ project.url | relative_url }}">
-      {{ project.title | escape }}
-   </a>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ project.title | escape }}</h5>
+    <p class="card-text">{{ project.content }}</p>
+    <a href="{{ project.link }}" class="btn btn-primary">Check the project</a>
+  </div>
+</div>
 {%- endfor -%}

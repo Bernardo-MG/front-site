@@ -39,8 +39,7 @@ markdown: kramdown
 #   - vendor/ruby/
 
 collections:
-  projects:
-    output: true
+  - projects
 
 header_pages:
   - projects.md
