@@ -41,3 +41,7 @@ markdown: kramdown
 collections:
   projects:
     output: true
+
+header_pages:
+  - projects.md
+  - about.md
