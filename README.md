@@ -1,8 +1,6 @@
 # Front Site
 
-A small site to have as the front site for my domain.
-
-It is created with [Jekyll](https://jekyllrb.com), which generates a static site from the project files.
+My own small personal site, generated with the help of [Jekyll](https://jekyllrb.com). It is just a static site, to showcase my personal projects.
 
 ## Usage
 
