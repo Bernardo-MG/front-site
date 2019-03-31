@@ -1,0 +1,24 @@
+# Travis CI Configuration file
+# @link https://travis-ci.org/
+
+# Using shell for the project
+language: ruby
+rvm:
+  - 2.4.1
+
+before_install:
+  # Gets scripts
+  - git clone -b v1.2.2 --single-branch https://github.com/Bernardo-MG/ci-shell-scripts.git ~/.scripts
+  # Sets scripts as executable
+  - chmod -R +x ~/.scripts/*
+  # Prepares CI environment
+  - source ~/.scripts/travis/load-travis-environment.sh
+script:
+   # Builds site
+   - jekyll build
+   # Verifies HTML
+   - bundle exec htmlproofer ./_site --disable-external
+after_success:
+  # Deploys the site
+  - cd _site
+  - ~/.scripts/deploy/deploy-ssh.sh $DO_DEPLOY_DOCS_RELEASE $DEPLOY_DOCS_USERNAME $DEPLOY_DOCS_PASSWORD $DEPLOY_DOCS_HOST $DEPLOY_DOCS_PORT $DEPLOY_DOCS_PATH_RELEASE
