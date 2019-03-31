@@ -16,6 +16,8 @@ before_install:
 script:
    # Builds site
    - jekyll build
+   # Verifies HTML
+   - bundle exec htmlproofer ./_site --disable-external
 after_success:
   # Deploys the site
   - cd _site
