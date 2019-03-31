@@ -16,7 +16,6 @@ permalink: /projects/
          <h6 class="card-subtitle mb-2 text-muted">{{ project.libraries }}</h6>
          {% endif %}
          <p class="card-text">{{ project.content }}</p>
-         <a href="{{ project.link }}" class="btn btn-primary">Check the project</a>
       </div>
    </div>
    {%- endfor -%}

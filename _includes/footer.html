@@ -1,5 +1,15 @@
 <footer class="footer">
    <div class="container">
-      <span class="text-muted">Place sticky footer content here.</span>
+      <div>
+         {%- if site.author -%}
+            {%- if site.email -%}
+            <a href="mailto:{{ site.email }}">{{ site.author | escape }}</a>
+            {%- else -%}
+            {{ site.author | escape }}
+            {%- endif -%}
+         {%- else -%}
+         {{ site.title | escape }}
+         {%- endif -%}
+      </div>
    </div>
 </footer>
