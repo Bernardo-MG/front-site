@@ -15,6 +15,11 @@ before_install:
   - chmod -R +x ~/.scripts/*
   # Prepares CI environment
   - source ~/.scripts/travis/load-travis-environment.sh
+install:
+  # Installs dependencies
+  - bundle install
+  # sshpass for deployment
+  - sudo apt-get install sshpass
 script:
    # Builds site
    - jekyll build
