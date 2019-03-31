@@ -5,6 +5,8 @@
 language: ruby
 rvm:
   - 2.4.1
+env:
+  - DEPLOY_DOCS=true
 
 before_install:
   # Gets scripts
