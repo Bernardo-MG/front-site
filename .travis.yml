@@ -3,6 +3,8 @@
 
 # Using shell for the project
 language: ruby
+rvm:
+  - 2.2
 
 before_install:
   # Gets scripts
