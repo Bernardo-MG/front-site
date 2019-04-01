@@ -4,7 +4,11 @@
       <div class="card-body">
          <h5 class="card-title"><a href="{{ project.link }}">{{ project.title | escape }}</a></h5>
          {% if project.languages %}
-         <h6 class="card-subtitle mb-2 text-muted">{{ project.languages }}</h6>
+         <h6 class="card-subtitle mb-2 text-muted">
+         {%- for language in project.languages -%}
+         <a href="/languages/{{ language }}">{{ language }}</a>&nbsp;
+         {%- endfor -%}
+         </h6>
          {% endif %}
          {% if project.libraries %}
          <h6 class="card-subtitle mb-2 text-muted">{{ project.libraries }}</h6>

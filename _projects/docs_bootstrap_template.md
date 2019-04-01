@@ -1,7 +1,7 @@
 ---
 title: Docs Bootstrap Template
 link: https://github.com/Bernardo-MG/docs-bootstrap-template
-languages: CSS, Javascript
+languages: [CSS, Javascript]
 libraries: Bootstrap
 ---
 A static template making use of Bootstrap and HTML5, meant to be used for creating responsive documentation pages.

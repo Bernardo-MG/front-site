@@ -35,8 +35,10 @@ exclude:
    - [vendor]
 
 collections:
-  - examples
-  - projects
+  examples:
+  projects:
+  languages:
+     output: true
 
 header_pages:
   - projects.md
