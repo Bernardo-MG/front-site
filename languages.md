@@ -5,17 +5,18 @@ permalink: /languages/
 ---
 
 <div>
-   {%- assign projects = '' | split: '' -%}
-   {%- for language in site.languages -%}
+   {%- assign languages = '' | split: '' -%}
    {%- for project in site.projects -%}
-      {%- if project.languages == language.name -%}
-      {% assign projects = projects | push: project %}
-      {%- endif -%}
+      {%- for lang in project.languages -%}
+         {% unless languages contains lang %}
+            {% assign languages = languages | push: lang %}
+         {% endunless %}
+      {%- endfor -%}
    {%- endfor -%}
-   {{ language }}
-   <div id="#{{ language.name | slugize }}">
-   <h2>{{ language.name }}</h2>
-   {% include projects.html projects=projects %}
+   {% assign languages = languages | sort %}
+   {%- for language in languages -%}
+   <div id="#{{ language | slugize }}">
+   <h2>{{ language }}</h2>
    </div>
    {%- endfor -%}
 </div>
