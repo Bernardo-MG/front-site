@@ -6,15 +6,17 @@
          {% if project.languages %}
          <h6 class="card-subtitle mb-2 text-muted">
          {%- for language in project.languages -%}
-         {% assign lang_name = language | downcase | slugize %}
-         {% assign lang_link = '/languages#' | append: lang_name %}
-         <a href="{{ lang_link }}">{{ language }}</a>&nbsp;
+         {% assign name = language | downcase | slugize %}
+         {% assign link = '/languages#' | append: name %}
+         <a href="{{ link }}">{{ language }}</a>&nbsp;
          {%- endfor -%}
          </h6>
          {% endif %}
-         {% if project.libraries %}
-         <h6 class="card-subtitle mb-2 text-muted">{{ project.libraries }}</h6>
-         {% endif %}
+         {%- for library in project.libraries -%}
+         {% assign name = library | downcase | slugize %}
+         {% assign link = '/libraries#' | append: name %}
+         <a href="{{ link }}">{{ library }}</a>&nbsp;
+         {%- endfor -%}
          <p class="card-text">{{ project.content }}</p>
       </div>
    </div>
