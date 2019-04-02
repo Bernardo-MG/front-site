@@ -13,3 +13,8 @@
 body {
     padding-top: 3em;
 }
+
+/* To remove the unneeded navbar margin */
+nav.fixed-top {
+    margin-bottom: 0;
+}

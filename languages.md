@@ -16,8 +16,8 @@ permalink: /languages/
    {%- endfor -%}
    {% assign languages = languages | sort %}
    {%- for language in languages -%}
-   <section>
-      <h2 id="{{ language | downcase | slugize }}" >{{ language }}</h2>
+   <section id="{{ language | downcase | slugize }}">
+      <h2>{{ language }}</h2>
       {%- assign projects = '' | split: '' -%}
       {%- for project in all_projects -%}
          {%- if project.languages contains language -%}

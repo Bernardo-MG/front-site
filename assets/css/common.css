@@ -9,3 +9,8 @@ html {
     position: relative;
     min-height: 100%;
 }
+
+section {
+    padding-top: 4em;
+    margin-top: -4em;
+}
