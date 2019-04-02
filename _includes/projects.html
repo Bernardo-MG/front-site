@@ -1,0 +1,24 @@
+<div>
+   {%- for project in include.projects -%}
+   <div class="card">
+      <div class="card-body">
+         <h5 class="card-title"><a href="{{ project.link }}">{{ project.title | escape }}</a></h5>
+         {% if project.languages %}
+         <h6 class="card-subtitle mb-2 text-muted">
+         {%- for language in project.languages -%}
+         {% assign name = language | downcase | slugize %}
+         {% assign link = '/languages#' | append: name %}
+         <a href="{{ link }}">{{ language }}</a>&nbsp;
+         {%- endfor -%}
+         </h6>
+         {% endif %}
+         {%- for library in project.libraries -%}
+         {% assign name = library | downcase | slugize %}
+         {% assign link = '/libraries#' | append: name %}
+         <a href="{{ link }}">{{ library }}</a>&nbsp;
+         {%- endfor -%}
+         <p class="card-text">{{ project.content }}</p>
+      </div>
+   </div>
+   {%- endfor -%}
+</div>

@@ -35,8 +35,8 @@ exclude:
    - [vendor]
 
 collections:
-  - examples
-  - projects
+  examples:
+  projects:
 
 header_pages:
   - projects.md
