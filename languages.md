@@ -16,15 +16,15 @@ permalink: /languages/
    {%- endfor -%}
    {% assign languages = languages | sort %}
    {%- for language in languages -%}
-   <div id="#{{ language | slugize }}">
-   <h2>{{ language }}</h2>
-   {%- assign projects = '' | split: '' -%}
-   {%- for project in all_projects -%}
-      {%- if project.languages contains language -%}
-      {% assign projects = projects | push: project %}
-      {%- endif -%}
-   {%- endfor -%}
-   {% include projects.html projects=projects %}
-   </div>
+   <section>
+      <h2 id="{{ language | downcase | slugize }}" >{{ language }}</h2>
+      {%- assign projects = '' | split: '' -%}
+      {%- for project in all_projects -%}
+         {%- if project.languages contains language -%}
+         {% assign projects = projects | push: project %}
+         {%- endif -%}
+      {%- endfor -%}
+      {% include projects.html projects=projects %}
+   </section>
    {%- endfor -%}
 </div>

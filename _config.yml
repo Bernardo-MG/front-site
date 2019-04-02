@@ -37,8 +37,6 @@ exclude:
 collections:
   examples:
   projects:
-  languages:
-     output: true
 
 header_pages:
   - projects.md

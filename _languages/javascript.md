@@ -1,4 +1,0 @@
----
-layout: language
-name: Javascript
----
