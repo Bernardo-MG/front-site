@@ -10,6 +10,12 @@ html {
     min-height: 100%;
 }
 
+/* Separates the content from the navigation bar. */
+body {
+    padding-top: 3em;
+}
+
+/* Separates the sections from the navbar when using anchors */
 section {
     padding-top: 4em;
     margin-top: -4em;
