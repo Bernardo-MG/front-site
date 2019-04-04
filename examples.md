@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: projects
 title: Examples
 permalink: /examples/
+collection: examples
 ---
-
-{% include projects.html projects=site.examples %}
