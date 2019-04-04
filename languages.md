@@ -1,6 +1,6 @@
 ---
-layout: projects
+layout: tags
 title: Languages
 permalink: /languages/
-collection: projects
+tags: languages
 ---

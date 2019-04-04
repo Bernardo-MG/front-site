@@ -1,6 +1,6 @@
 ---
-layout: projects
-title: Languages
-permalink: /languages/
-collection: examples
+layout: tags
+title: Libraries
+permalink: /libraries/
+tags: libraries
 ---

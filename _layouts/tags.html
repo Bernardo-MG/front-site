@@ -1,0 +1,28 @@
+---
+layout: page
+---
+
+<div>
+   {%- assign tags = '' | split: '' -%}
+   {% assign all_projects = site.projects | concat: site.examples %}
+   {%- for project in all_projects -%}
+      {%- for tag in project[page.tags] -%}
+         {% unless tags contains tag %}
+            {% assign tags = tags | push: tag %}
+         {% endunless %}
+      {%- endfor -%}
+   {%- endfor -%}
+   {% assign tags = tags | sort %}
+   {%- for tag in tags -%}
+   <section id="{{ tag | downcase | slugize }}">
+      <h2>{{ tag }}</h2>
+      {%- assign projects = '' | split: '' -%}
+      {%- for project in all_projects -%}
+         {%- if project[page.tags] contains tag -%}
+         {% assign projects = projects | push: project %}
+         {%- endif -%}
+      {%- endfor -%}
+      {% include projects.html projects=projects %}
+   </section>
+   {%- endfor -%}
+</div>
