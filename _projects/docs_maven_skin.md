@@ -5,6 +5,8 @@ languages:
    - Velocity
    - CSS
    - Javascript
-libraries: Maven, Bootstrap
+libraries: 
+   - Maven
+   - Bootstrap
 ---
 A minimalist and responsive Bootstrap-based HTML5 skin for Maven Site, which will help to create documentation sites with Maven.
