@@ -14,7 +14,7 @@ layout: page
 {% assign tags = tags | sort %}
 
 <div class="d-flex">
-   <nav>
+   <nav class="sidenav">
       <div class="list-group list-group-flush">
          {%- for tag in tags -%}
          <a href="#{{ tag | downcase | slugize }}" class="list-group-item list-group-item-action bg-light">{{ tag }}</a>

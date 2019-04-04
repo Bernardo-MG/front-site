@@ -4,3 +4,13 @@
 /*!
  * Sidebar styles.
  */
+
+.sidenav {
+   width: 10em;
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   overflow-x: hidden;
+   padding-top: 4em;
+}
