@@ -2,27 +2,38 @@
 layout: page
 ---
 
-<div>
-   {%- assign tags = '' | split: '' -%}
-   {% assign all_projects = site.projects | concat: site.examples %}
-   {%- for project in all_projects -%}
-      {%- for tag in project[page.tags] -%}
-         {% unless tags contains tag %}
-            {% assign tags = tags | push: tag %}
-         {% endunless %}
-      {%- endfor -%}
+{%- assign tags = '' | split: '' -%}
+{% assign all_projects = site.projects | concat: site.examples %}
+{%- for project in all_projects -%}
+   {%- for tag in project[page.tags] -%}
+      {% unless tags contains tag %}
+         {% assign tags = tags | push: tag %}
+      {% endunless %}
    {%- endfor -%}
-   {% assign tags = tags | sort %}
-   {%- for tag in tags -%}
-   <section id="{{ tag | downcase | slugize }}">
-      <h2>{{ tag }}</h2>
-      {%- assign projects = '' | split: '' -%}
-      {%- for project in all_projects -%}
-         {%- if project[page.tags] contains tag -%}
-         {% assign projects = projects | push: project %}
-         {%- endif -%}
+{%- endfor -%}
+{% assign tags = tags | sort %}
+
+<div class="d-flex">
+   <nav>
+      <div class="list-group list-group-flush">
+         {%- for tag in tags -%}
+         <a href="#{{ tag | downcase | slugize }}" class="list-group-item list-group-item-action bg-light">{{ tag }}</a>
+         {%- endfor -%}
+      </div>
+   </nav>
+   
+   <div>
+      {%- for tag in tags -%}
+      <section id="{{ tag | downcase | slugize }}">
+         <h2>{{ tag }}</h2>
+         {%- assign projects = '' | split: '' -%}
+         {%- for project in all_projects -%}
+            {%- if project[page.tags] contains tag -%}
+            {% assign projects = projects | push: project %}
+            {%- endif -%}
+         {%- endfor -%}
+         {% include projects.html projects=projects %}
+      </section>
       {%- endfor -%}
-      {% include projects.html projects=projects %}
-   </section>
-   {%- endfor -%}
+   </div>
 </div>
