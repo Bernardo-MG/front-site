@@ -2,7 +2,10 @@
 layout: home
 title: Index
 ---
-You may check a selection of my projects in this page, otherwise check my [Github profile](https://github.com/Bernardo-MG).
 
-<div class="github-card" data-github="bernardo-mg" data-width="400" data-height="" data-theme="default"></div>
-<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+<header class="pb-2 mt-4 mb-2">
+   <div class="row justify-content-center">
+      <div class="github-card" data-github="bernardo-mg" data-width="400" data-height="" data-theme="default"></div>
+   </div>
+</header>
+

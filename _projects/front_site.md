@@ -2,6 +2,7 @@
 title: Front Site
 link: https://github.com/Bernardo-MG/front-site
 languages:
+   - HTML
    - CSS
    - Javascript
    - Liquid

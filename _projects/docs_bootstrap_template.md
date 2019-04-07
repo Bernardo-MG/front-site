@@ -1,7 +1,8 @@
 ---
 title: Docs Bootstrap Template
 link: https://github.com/Bernardo-MG/docs-bootstrap-template
-languages: 
+languages:
+   - HTML
    - CSS
    - Javascript
 libraries: Bootstrap
