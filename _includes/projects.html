@@ -1,16 +1,23 @@
 <div>
    {%- for project in include.projects -%}
+   {% assign github_info = project.link | split: "/" %}
+   {% assign repo_user = github_info[3] %}
+   {% assign repo_name = github_info[4] %}
    <div class="card">
       <div class="card-body">
          <h5 class="card-title"><a href="{{ project.link }}">{{ project.title | escape }}</a></h5>
+         <a href="{{ project.link }}" class="badge"><img alt="License for {{ project.title | escape }}" src="https://img.shields.io/github/license/{{ repo_user }}/{{ repo_name }}.svg?style=social"/></a>
+         <a href="{{ project.link }}/stargazers" class="badge"><img alt="Stars for {{ project.title | escape }}" src="https://img.shields.io/github/stars/{{ repo_user }}/{{ repo_name }}.svg?style=social"/></a>
+         <a href="{{ project.link }}/watchers" class="badge"><img alt="Watchers for {{ project.title | escape }}" src="https://img.shields.io/github/watchers/{{ repo_user }}/{{ repo_name }}.svg?label=Watchers&style=social"/></a>
+         <a href="{{ project.link }}/network/members" class="badge"><img alt="Members for {{ project.title | escape }}" src="https://img.shields.io/github/forks/{{ repo_user }}/{{ repo_name }}.svg?label=Forks&style=social"/></a>
+         </p>
          {% if project.languages %}
-         <h6 class="card-subtitle mb-2 text-muted">
          {%- for language in project.languages -%}
          {% assign name = language | downcase | slugize %}
          {% assign link = '/languages#' | append: name %}
          <a href="{{ link }}">{{ language }}</a>&nbsp;
          {%- endfor -%}
-         </h6>
+         </p>
          {% endif %}
          {%- for library in project.libraries -%}
          {% assign name = library | downcase | slugize %}
