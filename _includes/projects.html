@@ -6,10 +6,10 @@
    <div class="card">
       <div class="card-body">
          <h5 class="card-title"><a href="{{ project.link }}">{{ project.title | escape }}</a></h5>
-         <img alt="" src="https://img.shields.io/github/license/{{ repo_user }}/{{ repo_name }}.svg?style=social"/>
-         <img alt="" src="https://img.shields.io/github/stars/{{ repo_user }}/{{ repo_name }}.svg?style=social"/>
-         <img alt="" src="https://img.shields.io/github/watchers/{{ repo_user }}/{{ repo_name }}.svg?label=Watchers&style=social"/>
-         <img alt="" src="https://img.shields.io/github/forks/{{ repo_user }}/{{ repo_name }}.svg?label=Forks&style=social"/>
+         <a href="{{ project.link }}"><img alt="" src="https://img.shields.io/github/license/{{ repo_user }}/{{ repo_name }}.svg?style=social"/></a>
+         <a href="{{ project.link }}/stargazers"><img alt="" src="https://img.shields.io/github/stars/{{ repo_user }}/{{ repo_name }}.svg?style=social"/></a>
+         <a href="{{ project.link }}/watchers"><img alt="" src="https://img.shields.io/github/watchers/{{ repo_user }}/{{ repo_name }}.svg?label=Watchers&style=social"/></a>
+         <a href="{{ project.link }}/network/members"><img alt="" src="https://img.shields.io/github/forks/{{ repo_user }}/{{ repo_name }}.svg?label=Forks&style=social"/></a>
          </p>
          {% if project.languages %}
          {%- for language in project.languages -%}
