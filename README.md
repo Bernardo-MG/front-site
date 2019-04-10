@@ -29,6 +29,10 @@ $ bundle exec jekyll serve
 
 Now it can be checked at [http://localhost:4000](http://localhost:4000). And it will rebuild the page after any change.
 
+### Remote Deployment
+
+Master is always deployed automatically to the remote server by the CI scripts.
+
 ## Collaborate
 
 Any kind of help with the project will be well received, and there are two main ways to give such help:
