@@ -31,7 +31,7 @@ Now it can be checked at [http://localhost:4000](http://localhost:4000). And it 
 
 ### Remote Deployment
 
-Master is always deployed automatically to the remote server by the CI scripts.
+Any change to the master branch triggers an automatic deployment to the remote server. The CI procedures take care of this.
 
 ## Collaborate
 
