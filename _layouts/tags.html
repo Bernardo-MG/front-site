@@ -11,7 +11,7 @@ layout: page
       {% endunless %}
    {%- endfor -%}
 {%- endfor -%}
-{% assign tags = tags | sort %}
+{% assign tags = tags | sort_natural %}
 
 <div class="d-flex">
    <nav class="sidenav d-sm-none d-md-block">
