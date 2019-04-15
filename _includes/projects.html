@@ -1,5 +1,6 @@
 <div>
-   {%- for project in include.projects -%}
+   {%- assign projects = include.projects | sort_natural: 'title' -%}
+   {%- for project in projects -%}
    {% assign github_info = project.link | split: "/" %}
    {% assign repo_user = github_info[3] %}
    {% assign repo_name = github_info[4] %}
