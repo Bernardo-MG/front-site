@@ -17,17 +17,17 @@ The project can be generated locally:
 $ jekyll build
 ```
 
-But as the resource links probably won't work this is only useful for manual deployment
+This will create a local _site folder containing the site, ready for deployment.
 
 ### Local Deployment
 
-To actually test the site it should be published locally:
+To actually test the site it is better publishing it locally:
 
 ```
 $ bundle exec jekyll serve
 ```
 
-Now it can be checked at [http://localhost:4000](http://localhost:4000). And it will rebuild the page after any change.
+Now it can be checked at [http://localhost:4000](http://localhost:4000), and it will rebuild the page after any change.
 
 ### Remote Deployment
 

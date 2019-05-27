@@ -13,25 +13,27 @@ layout: page
 {%- endfor -%}
 {% assign tags = tags | sort_natural %}
 
-<div class="d-flex">
-   <nav class="sidenav d-sm-none d-md-block">
-      <ul class="nav flex-column">
-         {%- for tag in tags -%}
-         <li class="nav-item">
-            <a class="nav-link" href="#{{ tag | downcase | slugize }}">{{ tag }}</a>
-         </li>
-         {%- endfor -%}
-      </ul>
-   </nav>
+<div class="container">
+   <div  class="col-2 d-none d-sm-block">
+      <nav class="sidenav">
+         <ul class="nav flex-column">
+            {%- for tag in tags -%}
+            <li class="nav-item">
+               <a class="nav-link" href="#{{ tag | downcase | slugize }}">{{ tag }}</a>
+            </li>
+            {%- endfor -%}
+         </ul>
+      </nav>
+   </div>
    
-   <div>
+   <div class="col">
       {%- for tag in tags -%}
       <section id="{{ tag | downcase | slugize }}">
          <h2>{{ tag }}</h2>
          {%- assign projects = '' | split: '' -%}
          {%- for project in all_projects -%}
             {%- if project[page.tags] contains tag -%}
-            {% assign projects = projects | push: project %}
+               {% assign projects = projects | push: project %}
             {%- endif -%}
          {%- endfor -%}
          {% include projects.html projects=projects %}
