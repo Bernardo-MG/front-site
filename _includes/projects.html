@@ -24,20 +24,22 @@
          <div id="{{ collapse_id }}" class="collapse" aria-labelledby="{{ heading_id }}" data-parent="#accordion">
             <div class="card-body">
                <p class="card-text">{{ project.content }}</p>
-               <h5 class="card-title"><a href="{{ project.link }}">Visit repo</a></h5>
+               <a href="{{ project.link }}" title="github{{ collapse_id }}" aria-label="github{{ collapse_id }}">
+                  <span class="navbar-brand fab fa-github fa-lg" aria-hidden="true"></span>
+               </a>
                </p>
                {% if project.languages %}
                {%- for language in project.languages -%}
                {% assign name = language | downcase | slugize %}
                {% assign link = '/languages#' | append: name %}
-               <a href="{{ link }}">{{ language }}</a>&nbsp;
+               <a href="{{ link }}" class="btn btn-outline-primary">{{ language }}</a>&nbsp;
                {%- endfor -%}
                </p>
                {% endif %}
                {%- for library in project.libraries -%}
                {% assign name = library | downcase | slugize %}
                {% assign link = '/libraries#' | append: name %}
-               <a href="{{ link }}">{{ library }}</a>&nbsp;
+               <a href="{{ link }}" class="btn btn-outline-primary">{{ library }}</a>&nbsp;
                {%- endfor -%}
             </div>
          </div>
