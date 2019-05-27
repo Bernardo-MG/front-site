@@ -9,7 +9,8 @@
       </section>
       {%- assign langs = '' | split: '' -%}
       {%- assign libs = '' | split: '' -%}
-      {%- for project in site.projects -%}
+      {% assign all_projects = site.projects | concat: site.examples %}
+      {%- for project in all_projects -%}
          {%- for lang in project.languages -%}
             {% unless langs contains lang %}
                {% assign langs = langs | push: lang %}
