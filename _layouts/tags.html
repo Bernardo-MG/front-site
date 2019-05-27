@@ -31,7 +31,7 @@ layout: page
          {%- assign projects = '' | split: '' -%}
          {%- for project in all_projects -%}
             {%- if project[page.tags] contains tag -%}
-            {% assign projects = projects | push: project %}
+               {% assign projects = projects | push: project %}
             {%- endif -%}
          {%- endfor -%}
          {% include projects.html projects=projects %}

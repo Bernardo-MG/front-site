@@ -7,6 +7,26 @@
       <section id="main-section" class="container">
          {{ content }}
       </section>
+      {%- assign langs = '' | split: '' -%}
+      {%- for project in site.projects -%}
+         {%- for lang in project.languages -%}
+            {% unless langs contains lang %}
+               {% assign langs = langs | push: lang %}
+            {% endunless %}
+         {%- endfor -%}
+      {%- endfor -%}
+      {% assign langs = langs | sort_natural %}
+      <section id="languages" class="container">
+         <div class="row justify-content-center">
+            <div class="btn-group" role="group" aria-label="Languages">
+               {%- for lang in langs -%}
+                  {% assign name = lang | downcase | slugize %}
+                  {% assign link = '/languages#' | append: name %}
+                  <a href="{{ link }}" class="btn btn-outline-primary">{{lang}}</A>
+               {%- endfor -%}
+            </div>
+         </div>
+      </section>
    </main>
    {%- include scripts.html -%}
 </body>

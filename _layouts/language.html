@@ -6,7 +6,7 @@ layout: default
    {%- assign projects = '' | split: '' -%}
    {%- for project in site.projects -%}
       {%- if project.languages contains page.name -%}
-      {% assign projects = projects | push: project %}
+         {% assign projects = projects | push: project %}
       {%- endif -%}
    {%- endfor -%}
    {{ language }}
