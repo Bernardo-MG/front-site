@@ -41,3 +41,5 @@ collections:
 header_pages:
   - projects.md
   - examples.md
+  - languages.md
+  - libraries.md
