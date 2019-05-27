@@ -25,22 +25,24 @@
       {% assign libs = libs | sort_natural %}
       <section id="links" class="container">
          <div class="row justify-content-center">
-            <div class="btn-group" role="group" aria-label="Languages links">
-               {%- for lang in langs -%}
-                  {% assign name = lang | downcase | slugize %}
-                  {% assign link = '/languages#' | append: name %}
-                  <a href="{{ link }}" class="btn btn-outline-primary">{{lang}}</A>
-               {%- endfor -%}
-            </div>
+            <h2>Languages</h2>
          </div>
          <div class="row justify-content-center">
-            <div class="btn-group" role="group" aria-label="Libraries links">
-               {%- for lib in libs -%}
-                  {% assign name = lib | downcase | slugize %}
-                  {% assign link = '/libraries#' | append: name %}
-                  <a href="{{ link }}" class="btn btn-outline-primary">{{lib}}</A>
-               {%- endfor -%}
-            </div>
+            {%- for lang in langs -%}
+               {% assign name = lang | downcase | slugize %}
+               {% assign link = '/languages#' | append: name %}
+               <a href="{{ link }}" class="btn btn-outline-primary">{{lang}}</A>
+            {%- endfor -%}
+         </div>
+         <div class="row justify-content-center">
+            <h2>Libraries</h2>
+         </div>
+         <div class="row justify-content-center">
+            {%- for lib in libs -%}
+               {% assign name = lib | downcase | slugize %}
+               {% assign link = '/libraries#' | append: name %}
+               <a href="{{ link }}" class="btn btn-outline-primary">{{lib}}</A>
+            {%- endfor -%}
          </div>
       </section>
    </main>
