@@ -8,21 +8,37 @@
          {{ content }}
       </section>
       {%- assign langs = '' | split: '' -%}
+      {%- assign libs = '' | split: '' -%}
       {%- for project in site.projects -%}
          {%- for lang in project.languages -%}
             {% unless langs contains lang %}
                {% assign langs = langs | push: lang %}
             {% endunless %}
          {%- endfor -%}
+         {%- for lib in project.libraries -%}
+            {% unless libs contains lib %}
+               {% assign libs = libs | push: lib %}
+            {% endunless %}
+         {%- endfor -%}
       {%- endfor -%}
       {% assign langs = langs | sort_natural %}
-      <section id="languages" class="container">
+      {% assign libs = libs | sort_natural %}
+      <section id="links" class="container">
          <div class="row justify-content-center">
-            <div class="btn-group" role="group" aria-label="Languages">
+            <div class="btn-group" role="group" aria-label="Languages links">
                {%- for lang in langs -%}
                   {% assign name = lang | downcase | slugize %}
                   {% assign link = '/languages#' | append: name %}
                   <a href="{{ link }}" class="btn btn-outline-primary">{{lang}}</A>
+               {%- endfor -%}
+            </div>
+         </div>
+         <div class="row justify-content-center">
+            <div class="btn-group" role="group" aria-label="Libraries links">
+               {%- for lib in libs -%}
+                  {% assign name = lib | downcase | slugize %}
+                  {% assign link = '/libraries#' | append: name %}
+                  <a href="{{ link }}" class="btn btn-outline-primary">{{lib}}</A>
                {%- endfor -%}
             </div>
          </div>
