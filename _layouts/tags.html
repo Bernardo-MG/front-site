@@ -36,7 +36,7 @@ layout: page
                {% assign projects = projects | push: project %}
             {%- endif -%}
          {%- endfor -%}
-         {% include projects.html projects=projects %}
+         {% include projectList.html projects=projects %}
       </section>
       {%- endfor -%}
    </div>
