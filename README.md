@@ -1,6 +1,6 @@
 # Front Site
 
-My own small personal site, generated with the help of [Jekyll](https://jekyllrb.com). It is just a static site, to showcase my personal projects.
+My own small personal site, located at https://docs.bernardomg.com/ and generated with the help of [Jekyll](https://jekyllrb.com). It is just a static site, to showcase my personal projects.
 
 ## Usage
 
