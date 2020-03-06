@@ -14,30 +14,24 @@ layout: page
 {% assign tags = tags | sort_natural %}
 
 <div class="container">
-   <div  class="col-2 d-none d-sm-block">
-      <nav class="sidenav pt-5">
-         <ul class="nav nav-fill flex-column pt-3">
-            {%- for tag in tags -%}
-            <li class="nav-item">
-               <a class="nav-link" href="#{{ tag | downcase | slugize }}">{{ tag }}</a>
-            </li>
-            {%- endfor -%}
-         </ul>
-      </nav>
-   </div>
-   
-   <div class="col">
+   <div class="row justify-content-center">
       {%- for tag in tags -%}
-      <section id="{{ tag | downcase | slugize }}">
-         <h2>{{ tag }}</h2>
-         {%- assign projects = '' | split: '' -%}
-         {%- for project in all_projects -%}
-            {%- if project[page.tags] contains tag -%}
-               {% assign projects = projects | push: project %}
-            {%- endif -%}
-         {%- endfor -%}
-         {% include projectList.html projects=projects %}
-      </section>
+         {% assign name = tag | downcase | slugize %}
+         {% assign link = '#' | append: name %}
+         <a href="{{ link }}" class="btn btn-outline-primary">{{tag}}</A>
       {%- endfor -%}
    </div>
+   
+   {%- for tag in tags -%}
+   <section id="{{ tag | downcase | slugize }}">
+      <h2>{{ tag }}</h2>
+      {%- assign projects = '' | split: '' -%}
+      {%- for project in all_projects -%}
+         {%- if project[page.tags] contains tag -%}
+            {% assign projects = projects | push: project %}
+         {%- endif -%}
+      {%- endfor -%}
+      {% include projectList.html projects=projects %}
+   </section>
+   {%- endfor -%}
 </div>
