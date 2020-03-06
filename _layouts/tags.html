@@ -21,7 +21,7 @@ layout: page
          <a href="{{ link }}" class="btn btn-outline-primary">{{tag}}</A>
       {%- endfor -%}
    </div>
-   
+
    {%- for tag in tags -%}
    <section id="{{ tag | downcase | slugize }}">
       <h2>{{ tag }}</h2>
