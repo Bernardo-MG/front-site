@@ -1,0 +1,23 @@
+name: Testing and validation
+
+on: [push, pull_request]
+
+jobs:
+
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check-out
+      uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+    - name: Install dependencies
+      run: bundle install
+    - name: Build the site
+      run: jekyll build
+    - name: Validate HTML
+      run: bundle exec htmlproofer ./_site --disable-external

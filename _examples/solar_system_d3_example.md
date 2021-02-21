@@ -5,4 +5,4 @@ languages: Javascript
 libraries:
    - d3
 ---
-Interactive solar system example.
+Small solar system with d3.

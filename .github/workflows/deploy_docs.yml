@@ -1,0 +1,29 @@
+name: Project deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy_docs:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check-out
+      uses: actions/checkout@v2
+    - name: Install sshpass
+      run: sudo apt-get install sshpass
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+    - name: Install dependencies
+      run: bundle install
+    - name: Build the site
+      run: jekyll build
+    - name: Deploy site
+      run: |
+        cd _site
+        sshpass -p ${{ secrets.DEPLOY_DOCS_PASSWORD }} scp -o 'StrictHostKeyChecking no' -P ${{ secrets.DEPLOY_DOCS_PORT }} -r ./* ${{ secrets.DEPLOY_DOCS_USERNAME }}'@'${{ secrets.DEPLOY_DOCS_HOST }}':'${{ secrets.DEPLOY_DOCS_PATH_RELEASE }};
